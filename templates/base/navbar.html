@@ -1,0 +1,44 @@
+<!-- Navigation bar -->
+<!--
+
+ The navbar is a simple panel with floating elements.
+
+ The logo-image is a simple SVG image.
+ The menus on the right should have an 'id' starting with 'menu-', so that the
+ javascript function that sets the active menu works. All menus that redirect
+ to a flask generated page should use the 'url_for' function.
+
+-->
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-left">
+            <a href="{{ url_for('index') }}">
+                <div id="logo-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="65" style="fill:none;" stroke-width="50" />
+                    </svg>
+                </div>
+                <div id="logo-name">FLASK-STATIC-SITE</div>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <ul class="navbar-list">
+                <li><a id="menu-about" href="{{ url_for('page', path='about') }}">ABOUT</a></li>
+                <li><a id="menu-blog" href="{{ url_for('page', path='blog') }}">BLOG</a></li>
+                <li><a id="menu-contact" href="{{ url_for('page', path='contact') }}">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // Highlight the selected menu
+        var path = window.location.pathname;
+        var page = path.split('/')[1];
+        if (page !== "") {
+            var menu = document.getElementById("menu-" + page);
+            menu.className = "menu-selected";
+        }
+    </script>
+
+</nav>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask-static-site</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/extras.css') }}">
+
+    <!-- Remove pygments if you don't need to highlight source code -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('pygments_css') }}">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    {% include 'base/navbar.html' %}
+
+    <!-- Header -->
+    {% with template = self %}
+        {% include 'base/header.html' %}
+    {% endwith %}
+
+    <!-- Content -->
+    {% with template = self %}
+        {% include 'base/section.html' %}
+    {% endwith %}
+
+    <!-- Comment section -->
+    {% if comments is defined %}
+        {% include 'base/comments.html' %}
+    {% endif %}
+
+    <!-- Footer -->
+    {% include 'base/footer.html' %}
+
+</body>
+</html>

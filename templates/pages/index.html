@@ -1,0 +1,43 @@
+<!--
+
+ This template is only called when the browser hits '/' (check 'def index()' in site.py)
+ It includes two header buttons but you can safely remove them, and the other difference
+ for a regular page template is the header_class which is set to 'header-large'.
+
+-->
+
+{% extends "base/base.html" %}
+
+
+
+{# ===== Header style and image ===== #}
+
+{% block header_class %}
+    header-large
+{% endblock %}
+
+{% block header_background %}
+    {{ page.image }}
+{% endblock %}
+
+
+
+{# ===== Header content ===== #}
+
+{% block header_content %}
+    <h1 class="header-title">{{ page.title }}</h1>
+    <h2 class="header-subtitle">{{ page.subtitle }}</h2>
+
+    <!-- You can add buttons, or any HTML content to the header -->
+    <a class="button button-header" href="{{ url_for('page', path='about') }}">ABOUT</a>
+    &nbsp;
+    <a class="button button-header" href="{{ url_for('page', path='contact') }}">CONTACT</a>
+{% endblock %}
+
+
+
+{# ===== Page content ===== #}
+
+{% block page_content %}
+    {{ page.html|safe }}
+{% endblock %}

@@ -1,0 +1,42 @@
+<!--
+
+ This footer contains a list of social icons and a footer message.
+ There's some icons in this example, but there are more. Check the
+ contents of static/images/social-accounts.svg (with a Text Editor)
+ to get the names of other icons.
+
+ The url and links are rendered using a flask 'macro' to save a lot
+ of manual labour.
+
+-->
+
+<!-- Social links macro -->
+
+{% macro social_link(href, glyph) %}
+    <a style="text-decoration: none" class="social-link" target="_blank" href="{{ href }}">
+        <svg class="social-icon" viewBox="0 0 64 64">
+            <use class="social-icon-background" xlink:href="/static/images/social-accounts.svg#background"></use>
+            <use class="social-icon-glyph" xlink:href="/static/images/social-accounts.svg#{{ glyph }}"></use>
+        </svg>
+    </a>
+{% endmacro %}
+
+
+
+<!-- Footer -->
+
+<footer>
+    <div class="page-container">
+        <div id="social-links">
+            <!-- Email -->
+            {{ social_link("mailto:myemail@gmail.com", "email-icon") }}
+            <!-- Facebook -->
+            {{ social_link("https://www.facebook.com/myfacebook", "facebook-icon") }}
+            <!-- Github -->
+            {{ social_link("https://github.com/myaccount", "github-icon") }}
+        </div>
+        <ul class="footer-message">
+            <li>RENDERED GRACIOUSLY BY FLASK-STATIC-SITE</li>
+        </ul>
+    </div>
+</footer>

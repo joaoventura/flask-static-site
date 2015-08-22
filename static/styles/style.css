@@ -1,0 +1,399 @@
+/******************************/
+/*        PAGE LAYOUT         */
+/******************************/
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000;
+}
+
+nav, header, section, footer {
+    display: block;
+}
+
+hr {
+    margin: 50px 0;
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+img {
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+/******************************/
+/*         CONTAINERS         */
+/******************************/
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.isolated {
+    margin: 50px 50px;
+}
+
+
+
+/******************************/
+/*           NAVBAR           */
+/******************************/
+
+.navbar {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    min-height: 50px;
+    border: 1px solid #ccc;
+    border-width: 0 0 1px;
+    background-color: rgba(255,255,255,0.95);
+    font-size: 15px;
+    z-index: 10;
+}
+
+.navbar a {
+    color: #000;
+}
+
+/* Navbar containers */
+
+.navbar-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar-left {
+    float: left;
+    margin-top: 10px;
+}
+
+.navbar-right {
+    margin-top: 0px;
+    float: right;
+}
+
+/* Left-side content */
+
+#logo-image {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+#logo-image svg {
+    stroke: orange;
+}
+
+#logo-name {
+    float: right;
+    font-size: 22px;
+    margin-left: 14px;
+    margin-top: -2px;
+}
+
+/* Right-side content */
+
+.navbar-list {
+ 	list-style-type: none;
+}
+
+.navbar-list li {
+    float: left;
+ 	margin-left: 30px;
+}
+
+.navbar-list a {
+    text-decoration: none;
+    padding-bottom: 1px;
+}
+
+.navbar-list a:hover {
+    color: orange;
+}
+
+.menu-selected {
+    border-bottom: solid 2px orange;
+    color: orange;
+}
+
+/* Submenus */
+
+.navbar-expand {
+
+}
+
+.navbar-sublist {
+    display: none;
+    position: absolute;
+    background-color: rgba(255,255,255,0.95);
+    list-style-type: none;
+    margin-top: 0px;
+    margin-left: -10px;
+    border: 1px solid black;
+}
+
+.navbar-expand:hover > .navbar-sublist {
+    display: inherit;
+}
+
+.navbar-sublist li {
+    display: list-item;
+    min-width: 170px;
+    float:none;
+    position: relative;
+    margin-left: -20px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/******************************/
+/*           HEADER           */
+/******************************/
+
+header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: black;
+    width: 100%;
+    color: white;
+}
+
+/* Header style and image */
+
+.header-large {
+    /*min-height: 100%;
+    height: 100%;*/
+    height: 650px;
+}
+
+.header-small {
+    height: 550px;
+}
+
+.header-smaller {
+    height: 500px;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Header content */
+
+.header-content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    padding: 0px 50px;
+    text-align: center;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.header-content-inner {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+}
+
+.header-title {
+    font-size: 62px;
+    line-height: 1.1;
+}
+
+.header-subtitle {
+    font-size: 32px;
+    color: #ffe0b2;
+}
+
+/* Media Modifiers */
+
+@media all and (max-width: 750px) {
+    .header-large {
+        height: 450px;
+    }
+
+    .header-small {
+        height: 350px;
+    }
+
+    .header-smaller {
+        height: 300px;
+    }
+
+    .header-title {
+        font-size: 42px;
+    }
+}
+
+
+
+/******************************/
+/*        PAGE CONTENT        */
+/******************************/
+
+section {
+    height: auto;
+    color: rgba(20,20,20,1);
+    line-height: 1.6;
+}
+
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+@media all and (max-width: 500px) {
+    .page-container {
+        padding: 20px;
+    }
+}
+
+section a {
+    color: #000;
+}
+
+section h1 {
+    text-align: center;
+}
+
+
+
+/******************************/
+/*        BLOG SPECIFIC       */
+/******************************/
+
+.blog-image {
+    text-align: center;
+    margin: 50px 50px;
+}
+
+.blog-image p {
+    font-style: italic;
+}
+
+
+.codehilite {
+    line-height: 1.2;
+    background-color: #efefef;
+    padding: 5px;
+    color: black;
+    white-space: pre-wrap;  /* CSS3 */
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    word-wrap: break-word;   /* IE 5.5+ */
+    font-size: 14px;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+        monospace,serif;
+    width: 100%;
+}
+
+
+
+/******************************/
+/*           FOOTER           */
+/******************************/
+
+footer {
+    background-color: #1f1f1f;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Footer message */
+
+.footer-message {
+    padding: 20px 0 0 0;
+    margin: 0;
+}
+
+.footer-message li {
+    list-style-type: none;
+    margin: 5px 0px;
+}
+
+/* Social icons */
+
+.social-link:hover .social-icon-background {
+    fill: rgba(255,183,77,0.9);
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+}
+
+.social-icon-glyph {
+    fill: black;
+}
+
+.social-icon-background {
+    fill: white;
+    transition: fill 0.3s ease;
+}
+
+
+
+/******************************/
+/*          BUTTONS           */
+/******************************/
+
+.button {
+    font-size: 13px;
+    letter-spacing: 1px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 14px 36px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgba(255,183,77,0.3);
+}
+
+.button-header {
+    font-size: 16px;
+    border-color: white;
+    color: white;
+}

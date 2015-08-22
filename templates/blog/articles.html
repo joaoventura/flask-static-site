@@ -1,0 +1,41 @@
+{% extends "base/base.html" %}
+
+
+
+{# ===== Header style and image ===== #}
+
+{% block header_class %}
+    header-small
+{% endblock %}
+
+{% block header_background %}
+    {{ url_for('static', filename='images/maciphone.jpg') }}
+{% endblock %}
+
+
+
+{# ===== Header content ===== #}
+
+{% block header_content %}
+    <h1 class="header-title">The Blog</h1>
+    <h2 class="header-subtitle">All articles</h2>
+{% endblock %}
+
+
+
+{# ===== Content ===== #}
+
+{% block page_content %}
+    <h1>All articles by year</h1>
+    {% for year, articles in pages %}
+        <h2>{{year}}</h2>
+        <ul>
+        {% for article in articles %}
+            <li><a href="{{ url_for('page', path=article.path) }}">{{ article.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <h2>No content</h2>
+    {% endfor %}
+    <hr />
+{% endblock %}

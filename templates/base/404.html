@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+
+
+
+{# ===== Header style and image ===== #}
+
+{% block header_class %}
+    header-small
+{% endblock %}
+
+{% block header_background %}
+    {{ url_for('static', filename='images/pier_bw.jpg') }}
+{% endblock %}
+
+
+
+{# ===== Header content ===== #}
+
+{% block header_content %}
+    <h1 class="header-title">Oh oh</h1>
+    <h2 class="header-subtitle">404</h2>
+{% endblock %}
+
+
+
+{# ===== Content ===== #}
+
+{% block page_content %}
+    <h1>The page you requested could not be found!</h1>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- Header -->
+<!--
+
+ Variable 'template' is a reference to the template object. Since flask
+ blocks are compiled to python functions, this is one way to render their
+ content.
+
+-->
+
+<header class="{{ template.header_class() }}"
+        style="background-image: url({{ template.header_background() }});">
+
+    <div class="mask">
+        <div class="header-content">
+            <div class="header-content-inner">
+                {{ template.header_content() }}
+            </div>
+        </div>
+    </div>
+</header>
+
