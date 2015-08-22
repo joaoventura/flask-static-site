@@ -5,27 +5,25 @@ Flask-static-site is a skeleton Python/Flask application ready to be deployed as
 Flask-static-site is released under an MIT Licence.
 
 
-# Motivation
+## Motivation
 
 Building static websites with frameworks such as Flask allows for a clear separation of concerns. For instance, you can separate website functionality over multiple files or use technologies, such as markdown, to generate HTML content. It gives you the benefits of a dynamic framework with the speed of serving static files.
 
 This project is based on [this tutorial by Nicolas Perriault](https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/). You should try to do it, and maybe check my code for some other ideas.
 
 
-# Installation
+## Installation
 
 Flask-static-site is a Python 3 application and depends on the **Flask** microframework, **flask_flatpages** to read and parse markdown files from the filesystem and **flask_frozen** to generate static html files for each URL route. Install them with:
 
-> pip3 install flask
-> pip3 install flask_flatpages
-> pip3 install flask_frozen
+> pip3 install flask, flask_flatpages, flask_frozen
 
 To get flask-static-site, you can clone this repository or download a zip file from the right menu.
 
 
-# Development & Building
+## Development & Building
 
-Start the development server with `python3 site.py`, open a browser and go to `http://localhost:8000`. You should see the skeleton website fully functional.
+Start the development server with `python3 site.py`, open a browser and go to [http://localhost:8000](http://localhost:8000). You should see the skeleton website fully functional.
 
 To add content to the website, open the **pages** folder and check its content. Basically, every website page is a markdown file converted to HTML. In **pages/blog** you will find the blog articles.
 
