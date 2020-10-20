@@ -17,6 +17,7 @@ There is a **static/blog** folder, you should drop all blog related files (image
 
 The blog index page will only include the 3 latest blog articles. If you want to change that number, or include all articles, just update the following function in **site.py**.
 
+    #!python
     @app.route('/blog/')
     def blog():
         articles = get_blog_articles(reverse=True)[:3]
