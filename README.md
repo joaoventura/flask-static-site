@@ -16,7 +16,7 @@ This project is based on [this tutorial by Nicolas Perriault](https://nicolas.pe
 
 Flask-static-site is a Python 3 application and depends on the **Flask** microframework, **flask_flatpages** to read and parse markdown files from the filesystem and **flask_frozen** to generate static html files for each URL route. Install them with:
 
-> pip3 install flask, flask_flatpages, flask_frozen
+> pip3 install -r requirements.txt
 
 To get flask-static-site, you can clone this repository or download a zip file from the right menu.
 
